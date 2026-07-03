@@ -8,7 +8,7 @@
 using UnityEngine;  // import unity core library
 
 // class AudioManager inheriting from MonoBehavior (i.e., can be attached to gameobject)
-public class AudioManager : MonoBehavior
+public class AudioManager : MonoBehaviour
 {
     // w/ singleton references: 
         // static == only one shared cpy across whole game
@@ -39,7 +39,7 @@ public class AudioManager : MonoBehavior
         audioSource.playOnAwake = false;
     }
 
-    private void PlaySong(AudioClip song)   // playback control
+    public void PlaySong(AudioClip song)   // playback control
     {
         if (song == null)
         {
@@ -63,6 +63,6 @@ public class AudioManager : MonoBehavior
 
      public void ResumeSong()
     {
-        audioSource.UnPause()
+        audioSource.UnPause();
     }
 }
