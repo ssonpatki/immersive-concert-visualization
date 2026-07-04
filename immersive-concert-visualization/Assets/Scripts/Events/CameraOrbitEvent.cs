@@ -16,7 +16,7 @@ public class CameraOrbitEvent : TimelineEvent
                 orbitTarget.position,
                 Vector3.up,
                 angle
-            ) 
+            ); 
         }
         else
         {

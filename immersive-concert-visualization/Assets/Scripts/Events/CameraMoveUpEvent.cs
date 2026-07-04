@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class CameraMoveUpEvent : TimelineEvent
 {
-    [SerializeField] private Camera targetCamera; // reference to the target camera
+    [SerializeField] private Transform targetTransform; // reference to the target camera
     [SerializeField] private Vector3 movement;
     
     public override void Execute()
     {
-        if (targetCamera != null)
+        if (targetTransform != null)
         {
-            targetCamera.position += movement; // move the camera to the new position
+            targetTransform.position += movement; // move the camera to the new position
+            targetTransform.LookAt(Vector3.zero); // make the camera look at the origin (0,0,0)
         }
         else
         {
